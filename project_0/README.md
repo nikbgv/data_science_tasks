@@ -35,13 +35,14 @@
 
 
 ### Этапы работы над проектом  
-....
+- Модифицировать функцию random_predict так, что бы справляться с угадыванием числа меньше чем за 20 попыток.
 
 :arrow_up:[к оглавлению](.README.md#Оглавление)
 
 
 ### Результаты:  
-....
+- Реализована модификация функции random_predict, угадывающая число за 8 попыток.
+- Ссылка на Google colab на блокнот с решением: https://colab.research.google.com/drive/1RsvUGKzh47qpfi4B5mxYKSFBhHIypjZ3?usp=sharing
 
 :arrow_up:[к оглавлению](.README.md#Оглавление)
 
