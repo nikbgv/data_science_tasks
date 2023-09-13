@@ -14,21 +14,24 @@ def random_predict(number: int = 1) -> int:
     Returns:
         int: Число попыток
     """
-    count = 0
-    low_num = 1
-    high_num = 101
+    predict_current = np.random.randint (1, 101)
+    
+    predict_max = 101
+    predict_min = 0
+    
+    count = 1 #не ноль, что-бы при угадывании с первой попытки функция вернула 1
+        
     while True:
-        count += 1
-        predict_number = np.random.randint(low_num, high_num)  # предполагаемое число
-        if number == predict_number:
-            break  # выход из цикла если угадали
-        elif number > predict_number:
-            # сдвигаем нижнюю границу генерации числа если загаданное число больше
-            low_num = predict_number
+        if predict_current == number:
+            break
+        elif predict_current > number:
+            predict_max = predict_current
+            predict_current -= int((predict_max - predict_min) // 2)
         else:
-            # сдвигаем верхнюю границу генерации числа если загаданное число меньше
-            high_num = predict_number
-            
+            predict_min = predict_current
+            predict_current += int((predict_max - predict_min) // 2)
+        count += 1   
+    
     return count
 
 
